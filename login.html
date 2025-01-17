@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Login/Register - Grove-Shop</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            background-color: rgb(246, 250, 215); 
+        } 
+        .nav-bar {
+            background: linear-gradient(to right, red, yellow);
+            padding: 10px; 
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0;
+            display: flex;
+            justify-content: center; 
+        }
+        nav li {
+            margin: 0 15px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px; 
+        } 
+        .form-container {
+            margin: 50px auto; 
+            padding: 20px; 
+            border: 1px solid #333; 
+            border-radius: 5px; 
+            background-color: #fff; 
+            width: 300px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        input[type="submit"] {
+            background-color: #4e56a0; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px; 
+            cursor: pointer; 
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #3a427b; 
+        }
+    </style> 
+</head> 
+<body> 
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Login or Register</h1>
+    <div class="form-container">
+        <form id="login-form">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <form id="register-form">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body> 
+</html>

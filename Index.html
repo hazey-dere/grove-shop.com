@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Grove-Shop</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            background-color: white; 
+        } 
+        .nav-bar {
+            background: linear-gradient(to right, red, yellow);
+            padding: 10px; 
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0;
+            display: flex;
+            justify-content: center; 
+        }
+        nav li {
+            margin: 0; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px; 
+        } 
+        .header-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 20px; 
+        }
+        .logo-container {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-right: -2;
+        }
+        .resized-image {
+            width: 300px;
+            height: auto; 
+        }
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        .category-container {
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            margin: 20px 0; 
+        }
+
+        a { 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            margin: 10px; 
+            border-radius: 5px; 
+            color: white;   
+        } 
+        ul {
+            list-style-type: none;
+            padding: 0; 
+        }
+        li {
+            display: inline;
+        }
+        p {
+            text-align: center;
+        }
+    </style> 
+</head> 
+<body> 
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="Logo_1.png" alt="Grove-Shop Logo">
+        </div>
+
+        <section id="hero">
+            <h2>Welcome to Our Shopping Platform!</h2>
+            <a href="#Category" class="cta-button">Shop Now</a>
+        </section>
+    </div>
+
+    <section id="Category">
+        <h2>Featured Category</h2>
+        <div class="category-container"> 
+            <div class="Category">
+                <h3>Home Appliances</h3>
+                <a href="Home-appliances.html">
+                    <img src="category1.jpg" class="resized-image" alt="Home Appliances">
+                </a>
+            </div>
+            <div class="Category">
+                <h3>Electronics</h3>
+                <a href="Electronics.html">
+                    <img src="category2.jpg" class="resized-image" alt="Electronics">
+                </a>
+            </div>
+            <div class="Category">
+                <h3>Clothing</h3>
+                <a href="Clothing.html">
+                    <img src="category3.jpg" class="resized-image" alt="Clothing">
+                </a>
+            </div>
+        </div> 
+    </section>
+    
+</body> 
+</html>

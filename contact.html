@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grove-shop - Contact us</title>
+<style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            background-color: white; 
+        } 
+        .nav-bar {
+            background: linear-gradient(to right, red, yellow);
+            padding: 10px; 
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0;
+            display: flex;
+            justify-content: center; 
+        }
+        nav li {
+            margin: 0; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px; 
+        } 
+        .logo-container {
+            display: flex;
+            justify-content: left; 
+            align-items: left; 
+            margin-top: -2; 
+        }
+        .resized-image {
+            width: 300px;
+            height: auto; 
+        }
+        a { 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            margin: 10px; 
+            border-radius: 5px; 
+            color: white;   
+        } 
+        ul {
+            list-style-type: none;
+            padding: 0; 
+        }
+        li {
+            display: inline;
+        }
+        p{
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: center;
+            background-color: #fff;
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+ 
+        input, button {
+            display: block;
+            width: 75%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+ 
+        button {
+            background-color: #4e44a7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+</style>
+ 
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+ 
+    <script>
+        
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyB_kpPQhJrUvrg4obzPH-f6ixIUylzlfjg",
+        authDomain: "project-8729207099546630783.firebaseapp.com",
+        projectId: "project-8729207099546630783",
+        storageBucket: "project-8729207099546630783.firebasestorage.app",
+        messagingSenderId: "24150710443",
+        appId: "1:24150710443:web:d8465cf1060e4f7108ffee",
+        measurementId: "G-DGLFGW32SS"
+    };
+ 
+        
+        firebase.initializeApp(firebaseConfig);
+ 
+        
+        const database = firebase.database();
+ 
+        
+        function submitContactForm(event) {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+ 
+            database.ref('contacts').push({
+                name: name,
+                email: email,
+                message: message
+            })
+            .then(() => {
+                alert('Your message has been sent successfully!');
+                document.getElementById('contactForm').reset();
+            })
+            .catch((error) => {
+                alert('Error: ' + error.message);
+            });
+        }
+</script>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="logo-container">
+        <img src="Logo_1.png" alt="Grove-Shop Logo">
+    </div>
+<form id="contactForm" onsubmit="submitContactForm(event)">
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+<input type="email" id="email" name="email" placeholder="Enter your email" required>
+<input type="text" id="message" name="message" placeholder="Enter your message" required>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>
