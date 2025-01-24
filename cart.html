@@ -81,7 +81,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="Login.html">Login/Register</a></li>
             </ul>
         </nav>
     </div>
@@ -97,16 +96,15 @@
                 </tr>
             </thead>
             <tbody id="cart-items">
-                <!-- Cart items will be dynamically inserted here -->
             </tbody>
         </table>
     </div>
 
     <div>
         <h2>Cart Summary</h2>
-        <p>Subtotal: <span id="subtotal">$0.00</span></p>
+        <p>Subtotal: <span id="subtotal">$1500.00</span></p>
         <p>Shipping: <span id="shipping">$5.00</span></p>
-        <p><strong>Total: <span id="total">$0.00</span></strong></p>
+        <p><strong>Total: <span id="total">$1500.00</span></strong></p>
         <label for="promo-code">Promo Code:</label>
         <input type="text" id="promo-code" placeholder="Enter promo code">
         <button onclick="applyPromoCode()">Apply</button>
@@ -122,10 +120,9 @@
     </div>
 
     <script>
-        // Sample cart data (replace with data from localStorage or an API)
         let cart = [
-            { id: 1, name: "Product Name", price: 10.00, quantity: 1, image: "product-image.jpg" },
-            { id: 2, name: "Product Name 2", price: 20.00, quantity: 2, image: "product-image.jpg" }
+            { id: 1, name: "Laptop", price: 1000.00, quantity: 1, image: "Laptop.jpg" },
+            { id: 2, name: "SmartPhone", price: 500.00, quantity: 1, image: "Smartphone.jpg" }
         ];
 
         function renderCart() {
@@ -163,7 +160,7 @@
         }
         function applyPromoCode() {
             const promoCode = document.getElementById("promo-code").value;
-            alert(`Promo code "${promoCode}" applied!`); // Replace with actual promo code logic
+            alert(`Promo code "${promoCode}" applied!`); 
         }
 
         renderCart();
